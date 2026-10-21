@@ -41,9 +41,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current == null) Debug.LogError("No keyboard device!");
-        else if (Keyboard.current.wKey.isPressed) Debug.Log("W is pressed");
-
         Look();
         Move();
     }
@@ -61,8 +58,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 input = move.ReadValue<Vector2>();
         
-        Debug.Log($"Move enabled: {move.enabled}  value: {input}");
-
         bool sprinting = sprint != null && sprint.IsPressed();
         float speed = sprinting ? sprintSpeed : playerSpeed;
 
