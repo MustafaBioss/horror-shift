@@ -3,6 +3,7 @@
     "com.daniel-geo.unityhackatime": "https://github.com/daniel-geo/unity-hackatime.git#package",
     "com.unity.inputsystem": "1.16.0",
     "com.unity.multiplayer.center": "1.0.1",
+    "com.unity.postprocessing": "3.5.4",
     "com.unity.render-pipelines.universal": "17.3.0",
     "dev.yarnspinner.unity": "https://github.com/YarnSpinnerTool/YarnSpinner-Unity.git#current",
     "com.unity.modules.accessibility": "1.0.0",
