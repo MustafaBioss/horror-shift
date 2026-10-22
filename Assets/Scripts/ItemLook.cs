@@ -29,10 +29,14 @@ public class ItemLook : MonoBehaviour
         {
             current = interactable;
             pointer.color = highlightColor;
+            Debug.DrawRay(transform.position, transform.forward * range, Color.green);
+            Debug.Log(hit.collider);
         }
         else
         {
             pointer.color = defaultColor;
+            Debug.DrawRay(transform.position, transform.forward * range, Color.white);
+            Debug.Log(hit.collider);
         }
 
         if (current != null && interact.WasPressedThisFrame())
