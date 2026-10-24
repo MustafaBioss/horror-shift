@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0.39088646, g: 0.4528302, b: 0.4528302, a: 1}
+  m_FogColor: {r: 0.019607844, g: 0.03137255, b: 0.047058824, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.15
+  m_FogDensity: 0.075
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 3411f94e3a532654884762b61b7a4d8d, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -5456,7 +5456,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -7072,7 +7072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1769069348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7961,6 +7961,26 @@ PrefabInstance:
     - target: {fileID: 4637905302480841007, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5705706574554138754, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596409901466504293, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596409901466504293, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.047058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596409901466504293, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.03137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596409901466504293, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.019607844
       objectReference: {fileID: 0}
     - target: {fileID: 8120214019677828910, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
       propertyPath: interactable
