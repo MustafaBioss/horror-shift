@@ -1879,6 +1879,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1907909435664816583, guid: a7c8cfc52be74bf7a49ae575773150b0, type: 3}
   m_PrefabInstance: {fileID: 330764488}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &343003830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2639746571649351822, guid: 33faca699f243d3448ebedbac4674920, type: 3}
+  m_PrefabInstance: {fileID: 1425698675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &343615744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5453,6 +5458,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 16.325, y: -19.566, z: 18.154}
+--- !u!1 &1245867597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6159167115720236620, guid: 33faca699f243d3448ebedbac4674920, type: 3}
+  m_PrefabInstance: {fileID: 1425698675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1245867601
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245867597}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e56dc4809e8a01748b8e37b7e1ecbcab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1256924570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6202,6 +6234,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 759721163}
     m_Modifications:
+    - target: {fileID: 2080894618554804237, guid: 33faca699f243d3448ebedbac4674920, type: 3}
+      propertyPath: m_Size.z
+      value: 0.72250956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080894618554804237, guid: 33faca699f243d3448ebedbac4674920, type: 3}
+      propertyPath: m_Center.z
+      value: 0.44222027
+      objectReference: {fileID: 0}
     - target: {fileID: 2639746571649351822, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: m_Name
       value: Freezer
@@ -6212,11 +6252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3452452396989897268, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6869999
+      value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 3452452396989897268, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.452311
+      value: -8.457
       objectReference: {fileID: 0}
     - target: {fileID: 3452452396989897268, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6246,6 +6286,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3796920353013600686, guid: 33faca699f243d3448ebedbac4674920, type: 3}
+      propertyPath: m_Name
+      value: FreezerCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159167115720236620, guid: 33faca699f243d3448ebedbac4674920, type: 3}
+      propertyPath: m_Name
+      value: FreezerDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 8859510911948678706, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -6264,7 +6312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8859510911948678706, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6
+      value: 0.575
       objectReference: {fileID: 0}
     - target: {fileID: 8859510911948678706, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6293,13 +6341,62 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2639746571649351822, guid: 33faca699f243d3448ebedbac4674920, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1425698681}
+    - targetCorrespondingSourceObject: {fileID: 2639746571649351822, guid: 33faca699f243d3448ebedbac4674920, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1425698680}
+    - targetCorrespondingSourceObject: {fileID: 6159167115720236620, guid: 33faca699f243d3448ebedbac4674920, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1245867601}
   m_SourcePrefab: {fileID: 100100000, guid: 33faca699f243d3448ebedbac4674920, type: 3}
 --- !u!4 &1425698676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3452452396989897268, guid: 33faca699f243d3448ebedbac4674920, type: 3}
   m_PrefabInstance: {fileID: 1425698675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1425698680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343003830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d705677ab3d48a44b98d5ef0aab912ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1425698681}
+        m_TargetAssemblyTypeName: Freezer, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1425698681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343003830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1966b1806ae255d47adc56c0bd7d81a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Freezer
+  animator: {fileID: 1245867601}
 --- !u!1001 &1463468576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6583,6 +6680,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2260059342126439758, guid: b1a860f7a2b643e2bde007ebbca41924, type: 3}
   m_PrefabInstance: {fileID: 1520742066}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1549913046 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+  m_PrefabInstance: {fileID: 545187778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1562740638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8155,7 +8263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 241971627548087483, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 241971627548087483, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8197,6 +8305,10 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3847999747040071871, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1549913046}
     - target: {fileID: 4637905302480841007, guid: a9944c2a3c3123d47b58023eae983622, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
