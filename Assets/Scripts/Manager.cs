@@ -1,19 +1,25 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Manager : MonoBehaviour
 {
 
     public static Manager Instance;
 
-    public Transform spawnPoint, orderArea, exitPoint;
-    public Seat[] seats;
+    public Transform spawnPoint, exitPoint;
+    public Transform[] orderAreas, seats;
     [SerializeField] private GameObject NPCPrefab;
+    public bool spawn = true;
     [SerializeField] private Vector2 spawnDelay = new Vector2(10f, 25f);
+
+    Queue<Transform> freeSeats, freeOrderAreas;
 
     void Awake()
     {
         Instance = this;
+        freeSeats = new Queue<Transform>(seats);
+        freeOrderAreas = new Queue<Transform>(orderAreas);
     }
 
     public void StartSpawning()
@@ -23,26 +29,20 @@ public class Manager : MonoBehaviour
 
     IEnumerator SpawnLoop()
     {
-        while (true)
+        while (spawn)
         {
-            Debug.Log("Waiting to spawn customer.");
             yield return new WaitForSeconds(Random.Range(spawnDelay.x, spawnDelay.y));
-            Debug.Log("Spawning customer.");
-            Instantiate(NPCPrefab, spawnPoint.position, spawnPoint.rotation);
-        }
-    }
-
-    public Seat TakeSeat()
-    {
-        foreach (var s in seats)
-        {
-            if (!s.occupied)
+            
+            if (freeOrderAreas.Count > 0)
             {
-                s.occupied = true;
-                return s;
+                Instantiate(NPCPrefab, spawnPoint.position, spawnPoint.rotation);
             }
         }
-
-        return null;
     }
+
+    public Transform TakeSeat() => freeSeats.Count > 0 ? freeSeats.Dequeue() : null;
+    public void ReleaseSeat(Transform seat) => freeSeats.Enqueue(seat);
+
+    public Transform TakeOrderArea() => freeOrderAreas.Count > 0 ? freeOrderAreas.Dequeue() : null;
+    public void ReleaseOrderArea(Transform area) => freeOrderAreas.Enqueue(area);
 }
