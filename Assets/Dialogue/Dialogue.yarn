@@ -1,0 +1,6 @@
+﻿title: Start
+---
+<<allow_movement false>>
+First day of work, I should go and clock in now.
+<<allow_movement true>>
+===

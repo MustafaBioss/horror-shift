@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Yarn.Unity;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float playerSpeed = 5f;
     [SerializeField] float sprintSpeed = 8f;
     [SerializeField] float gravity = -20f;
+    bool canMove = true;
+
 
     [Header("Camera Settings")]
     [SerializeField] Transform cameraTransform;
@@ -19,16 +22,26 @@ public class PlayerMovement : MonoBehaviour
     InputAction look;
     InputAction sprint;
 
+    public DialogueRunner dialogueRunner;
+
     float verticalVelocity;
     float pitch;
 
     void Awake()
     {
+
+        dialogueRunner.AddCommandHandler<bool>(
+            "allow_movement",
+            AllowMovement
+        );
+        
         controller = GetComponent<CharacterController>();
 
         move = InputSystem.actions.FindAction("Player/Move");
         look = InputSystem.actions.FindAction("Player/Look");
         sprint = InputSystem.actions.FindAction("Player/Sprint");
+
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,8 +54,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Look();
-        Move();
+        if (canMove)
+        {
+            Look();
+            Move();
+        }
     }
 
     void Look()
@@ -70,4 +86,10 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
+
+    private void AllowMovement(bool allow)
+    {
+        canMove = allow ;
+    }
+
 }
