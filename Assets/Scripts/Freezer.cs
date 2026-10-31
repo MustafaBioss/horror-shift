@@ -11,6 +11,5 @@ public class Freezer : MonoBehaviour
         isOpen = !isOpen;
         animator.enabled = true;
         animator.SetBool("isOpen", isOpen);
-
     }
 }
