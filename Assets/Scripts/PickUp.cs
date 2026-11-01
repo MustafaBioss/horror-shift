@@ -7,7 +7,10 @@ public class PickUp : MonoBehaviour
 
     public void PickItem()
     {
-        interactable.gameObject.SetActive(false);
-        item.SetActive(true);
+        if (interactable.canInteract)
+        {
+            interactable.gameObject.SetActive(false);
+            item.SetActive(true);
+        }
     }
 }

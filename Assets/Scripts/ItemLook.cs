@@ -28,15 +28,12 @@ public class ItemLook : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, range) && hit.collider.TryGetComponent(out Interactable interactable)) 
         {
             current = interactable;
-            pointer.color = highlightColor;
-            Debug.DrawRay(transform.position, transform.forward * range, Color.green);
-            Debug.Log(hit.collider);
+            if (interactable.canInteract)
+                pointer.color = highlightColor;   
         }
         else
         {
             pointer.color = defaultColor;
-            Debug.DrawRay(transform.position, transform.forward * range, Color.white);
-            Debug.Log(hit.collider);
         }
 
         if (current != null && interact.WasPressedThisFrame())
