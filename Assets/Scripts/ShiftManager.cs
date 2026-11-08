@@ -15,6 +15,6 @@ public class ShiftManager : MonoBehaviour
     {
         isClockedIn = true;
         Manager.Instance.StartSpawning();
-        Debug.Log("Player clocked in and started spawning.");
+        ObjectiveManager.objective = "Serve The Customers.";
     }
 }
