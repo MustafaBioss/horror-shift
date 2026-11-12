@@ -4,8 +4,9 @@ using System.Collections;
 public class LightFlicker : MonoBehaviour
 {
 
-    [SerializeField] Light light;
+    [SerializeField] Light flickerLight;
     [SerializeField] bool flicker = true;
+    [SerializeField] Light[] allLights;
 
     // Update is called once per frame
     void OnEnable()
@@ -25,18 +26,26 @@ public class LightFlicker : MonoBehaviour
             flicker = true;
     }
 
+    void Update()
+    {
+        if (Manager.Instance.customersServed > 1)
+        {
+            flicker = false;
+            foreach (Light light in allLights)
+                light.enabled = false;
+        }
+    }
+
     IEnumerator Flicker()
     {
         while (true)
         {
             while (!flicker)
-            {
-                light.enabled = true;
                 yield return null;
-            }
-            light.enabled = false;
+            
+            flickerLight.enabled = false;
             yield return new WaitForSeconds(Random.Range(0.1f, 0.5f));
-            light.enabled = true;
+            flickerLight.enabled = true;
             yield return new WaitForSeconds(Random.Range(0.1f, 1.5f));
         }
     }

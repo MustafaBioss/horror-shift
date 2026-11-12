@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour
     [SerializeField] private Vector2 spawnDelay = new Vector2(10f, 25f);
 
     Queue<Transform> freeSeats, freeOrderAreas;
+    public int customersSpawned = 0, customersServed = 0;
 
     void Awake()
     {
@@ -29,19 +30,24 @@ public class Manager : MonoBehaviour
 
     IEnumerator SpawnLoop()
     {
-        while (spawn)
+        while (spawn && customersSpawned < 2)
         {
             yield return new WaitForSeconds(Random.Range(spawnDelay.x, spawnDelay.y));
             
             if (freeOrderAreas.Count > 0)
             {
+                customersSpawned++;
                 Instantiate(NPCPrefab, spawnPoint.position, spawnPoint.rotation);
             }
         }
     }
 
     public Transform TakeSeat() => freeSeats.Count > 0 ? freeSeats.Dequeue() : null;
-    public void ReleaseSeat(Transform seat) => freeSeats.Enqueue(seat);
+    public void ReleaseSeat(Transform seat)
+    {
+        freeSeats.Enqueue(seat);
+        customersServed++;
+    }
 
     public Transform TakeOrderArea() => freeOrderAreas.Count > 0 ? freeOrderAreas.Dequeue() : null;
     public void ReleaseOrderArea(Transform area) => freeOrderAreas.Enqueue(area);

@@ -13,8 +13,12 @@ public class ShiftManager : MonoBehaviour
 
     public void Clock()
     {
-        isClockedIn = true;
-        Manager.Instance.StartSpawning();
-        ObjectiveManager.objective = "Serve The Customers.";
+        if (isClockedIn == false)
+        {
+            isClockedIn = true;
+            Manager.Instance.StartSpawning();
+            ObjectiveManager.objective = "Serve The Customers.";
+            GetComponent<Interactable>().canInteract = false;
+        }
     }
 }
