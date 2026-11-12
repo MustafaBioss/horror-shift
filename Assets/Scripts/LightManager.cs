@@ -7,6 +7,7 @@ public class LightFlicker : MonoBehaviour
     [SerializeField] Light flickerLight;
     [SerializeField] bool flicker = true;
     [SerializeField] Light[] allLights;
+    [SerializeField] GameObject flashlight;
 
     // Update is called once per frame
     void OnEnable()
@@ -30,6 +31,7 @@ public class LightFlicker : MonoBehaviour
     {
         if (Manager.Instance.customersServed > 1)
         {
+            flashlight.GetComponent<Interactable>().canInteract = true;
             flicker = false;
             foreach (Light light in allLights)
                 light.enabled = false;
