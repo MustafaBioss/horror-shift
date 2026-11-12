@@ -2591,7 +2591,9 @@ MonoBehaviour:
   - {fileID: 307504670}
   - {fileID: 1078689963}
   - {fileID: 102323157}
-  - {fileID: 102323157}
+  - {fileID: 988599384}
+  - {fileID: 2085379451}
+  - {fileID: 112514661}
 --- !u!65 &457596545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6313,8 +6315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Test light shutdown and add customer order taking functionality and move
-    this text a lil to the right.
+  m_text: Objective Here
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

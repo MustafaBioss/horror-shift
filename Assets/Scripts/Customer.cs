@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Customer : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Customer : MonoBehaviour
     public bool orderTaken, foodServed, ateFood;
 
     [SerializeField] private Vector2 eatingTime = new Vector2(15f, 30f);
+
+    [SerializeField] string[] menu = {"Donut", "Americano", "Cappucino", "Cake"};
+    [SerializeField] List<string> order = new List<string>();
 
     bool seated;
 
@@ -81,5 +85,28 @@ public class Customer : MonoBehaviour
         {
             foodServed = true;
         }
+    }
+    
+    public void placeOrder()
+    {
+        order.Clear();
+
+        int itemCount = Random.Range(1, 3);
+        itemCount = Mathf.Min(itemCount, menu.Length);
+        
+        var available = new List<string>(menu);
+
+        for (int i = 0; i < itemCount; i++)
+        {
+            int index = Random.Range(0, available.Count);
+            order.Add(available[index]);
+            available.RemoveAt(index);
+        }
+        
+        Debug.Log($"Customer ordered {string.Join(", ", order)}");
+
+        orderTaken = true;
+
+        GetComponent<Interactable>().canInteract = false;
     }
 }
