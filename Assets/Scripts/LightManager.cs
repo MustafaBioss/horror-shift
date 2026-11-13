@@ -32,6 +32,8 @@ public class LightFlicker : MonoBehaviour
         if (Manager.Instance.customersServed > 1)
         {
             flashlight.GetComponent<Interactable>().canInteract = true;
+            flashlight.transform.GetChild(1).gameObject.SetActive(true);
+            flashlight.transform.GetChild(2).gameObject.SetActive(true);
             flicker = false;
             foreach (Light light in allLights)
                 light.enabled = false;
