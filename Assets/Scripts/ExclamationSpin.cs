@@ -4,7 +4,7 @@ public class ExclamationSpin : MonoBehaviour
 {
 
     [SerializeField] float spinSpeed = 90f;
-    [SerializeField] float bounceHeight = 0.5f;
+    [SerializeField] float bounceHeight = 0.1f;
     [SerializeField] float bounceSpeed = 2f;
 
     Vector3 startPos;

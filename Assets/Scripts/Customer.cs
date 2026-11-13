@@ -14,6 +14,7 @@ public class Customer : MonoBehaviour
 
     [SerializeField] string[] menu = {"Donut", "Americano", "Cappucino", "Cake"};
     [SerializeField] List<string> order = new List<string>();
+    [SerializeField] GameObject exclamationMark;
 
     bool seated;
 
@@ -26,6 +27,7 @@ public class Customer : MonoBehaviour
     void Start()
     {
         StartCoroutine(Routine());
+        exclamationMark.SetActive(false);
     }
 
     IEnumerator Routine()
@@ -36,14 +38,15 @@ public class Customer : MonoBehaviour
             yield return new WaitForSeconds(1f);
         
         yield return GoTo(orderArea.position);
+        exclamationMark.SetActive(true);
 
         yield return new WaitUntil(() => orderTaken);
         diner.ReleaseOrderArea(orderArea);
         orderArea = null;
+        exclamationMark.SetActive(false);
 
         while ((seat = diner.TakeSeat()) == null) // waiting time till a seat is available
             yield return new WaitForSeconds(1f);
-        
 
         yield return GoTo(seat.transform.position);
         seated = true;
